@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 })
 export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
+  isSuccessRegistration = false;
 
   constructor(private _fb: FormBuilder, private _http: HttpClient, private router: Router) {
   }
@@ -27,8 +28,9 @@ export class RegistrationComponent implements OnInit {
   registration() {
     let data = this.registrationForm.value;
     this._http.post('/api/registration', data).subscribe((res: any) => {
-      // redirect to autorized page
-      this.router.navigate(['/account']);
+      this.isSuccessRegistration = true;
+      this.registrationForm.reset();
+      
     }, (err) => {
       //TODO show error message
     });
