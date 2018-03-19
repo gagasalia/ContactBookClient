@@ -1,0 +1,45 @@
+<div class="form-container">
+  <form class="column" [formGroup]="registrationForm">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="სახელი" formControlName="firstName">
+
+      <small [hidden]="registrationForm.controls['firstName'].valid || !registrationForm.controls['firstName'].dirty" class="text-danger">
+        სავალდებულოა
+      </small>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="გვარი" formControlName="lastName">
+
+      <small [hidden]="registrationForm.controls['lastName'].valid || !registrationForm.controls['lastName'].dirty" class="text-danger">
+        სავალდებულოა
+      </small>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="მობილურის ნომერი" formControlName="phoneNumber">
+  
+        <small [hidden]="registrationForm.controls['phoneNumber'].valid || !registrationForm.controls['phoneNumber'].dirty" class="text-danger">
+          სავალდებულოა
+        </small>
+      </div>
+  
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="პაროლი" formControlName="password">
+
+      <small [hidden]="registrationForm.controls['password'].valid || !registrationForm.controls['password'].dirty" class="text-danger">
+        სავალდებულოა
+      </small>
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="საიდუმლო კითხვა: თქვენი ჰობი" formControlName="secretQuestionAnswer">
+
+      <small [hidden]="registrationForm.controls['secretQuestionAnswer'].valid || !registrationForm.controls['secretQuestionAnswer'].dirty"
+        class="text-danger">
+        სავალდებულოა
+      </small>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit" [disabled]="!registrationForm.valid" (click)="registration()">რეგისტრაცია</button>
+    </div>
+  </form>
+</div>

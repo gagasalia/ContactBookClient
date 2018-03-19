@@ -1,0 +1,26 @@
+<div class="form-container">
+  <div class="wrapper">
+  <form class="row" [formGroup]="authForm">
+    <div class="form-group group-wrapper">
+      <input type="text" class="form-control" placeholder="მობილური" formControlName="phoneNumber">
+
+      <small [hidden]="authForm.controls['phoneNumber'].valid || !authForm.controls['phoneNumber'].dirty" class="text-danger">
+       პაროლი სავალდებულოა
+      </small>
+    </div>
+
+    <div class="form-group group-wrapper">
+        <input type="password" class="form-control" placeholder="პაროლი" formControlName="password">
+  
+        <small [hidden]="authForm.controls['password'].valid || !authForm.controls['password'].dirty" class="text-danger">
+            პაროლი სავალდებულოა
+        </small>
+      </div>
+
+    <div class="form-group group-wrapper">
+      <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid" (click)="login()">შესვლა</button>
+    </div>
+  </form>
+  </div>
+
+</div>
