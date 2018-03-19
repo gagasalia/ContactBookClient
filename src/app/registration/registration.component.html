@@ -38,6 +38,10 @@
         სავალდებულოა
       </small>
     </div>
+    <div *ngIf="isSuccessRegistration" class="form-group">
+      <span>თქვენ წარმატებით დარეგისტრირდით, გაიარეთ ავტორიზაცია</span>
+     </div>
+   
     <div class="form-group">
       <button class="btn btn-primary" type="submit" [disabled]="!registrationForm.valid" (click)="registration()">რეგისტრაცია</button>
     </div>
